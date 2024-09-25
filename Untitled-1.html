@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Grid Activity</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: lightgrey;
+            border-radius: 10px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .card-content {
+            transition: all 1s ease;
+            opacity: 0;
+
+        }
+
+        .card:hover .card-content {
+            opacity: 1;
+
+        }
+
+        #card4 {
+            background-color: red;
+        }
+
+        #card1 .card-content {
+            display: block;
+        }
+
+        #card2 .card-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        #card3 .card-content div {
+            float: left;
+            width: 50%;
+        }
+
+        #card4 .card-content {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #card5 .card-content div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        [data-type="text"] {
+            text-align: center;
+        }
+
+        #card7 .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+
+        #card9 .card-content div {
+            margin: 20px 30px;
+
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repreat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="card" id="card1">
+            <div class="card-content">
+                <p>This is Card 1 (Box Layout)</p>
+            </div>
+        </div>
+
+        <div class="card" id="card2">
+            <div class="card-content">
+                <div>grid 1</div>
+                <div>grid 2</div>
+            </div>
+        </div>
+
+        <div class="card" id="card3">
+            <div class="card-content">
+                <div>float 1</div>
+                <div>float 2</div>
+            </div>
+        </div>
+
+        <div class="card" id="card4">
+            <div class="card-content">
+                <div>flex spaced evenly 1</div>
+                <div>flex spaced evenly 2</div>
+                <div>flex spaced evenly 3</div>
+            </div>
+        </div>
+
+        <div class="card" id="card5">
+            <div class="card-content">
+                <div>inline-block 1</div>
+                <div>inline-block 2</div>
+            </div>
+        </div>
+
+        <div class="card" id="card6" data-type="text">
+            <div class="card-content">
+                <p>Centered Text</p>
+            </div>
+        </div>
+
+        <div class="card" id="card7">
+            <div class="card-content">
+                <div>flex column 1</div>
+                <div>flex column 2</div>
+                <div>flex column 3</div>
+            </div>
+        </div>
+
+        <div class="card" id="card8">
+            <div class="card-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>column one</th>
+                            <th colspan="2">column two</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> item 1</td>
+                            <td> item 2</td>
+                            <td> item 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" id="card9">
+            <div class="card-content">
+                <div>Random margin Item 1</div>
+                <div>Random margin Item 2</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
